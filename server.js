@@ -12,7 +12,7 @@ const io = new Server(server, {
   }
 });
 
-const PORT = 'https://testsocket-backend.onrender.com';
+const PORT = process.env.PORT || 3000; // Используем порт из переменных окружения или 3000
 const MESSAGES_FILE = 'messages.json';
 
 // Функция для загрузки сообщений из файла
@@ -64,5 +64,5 @@ io.on('connection', (socket) => {
 
 // Запуск сервера
 server.listen(PORT, () => {
-  console.log(`Server is running on ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
