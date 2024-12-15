@@ -12,6 +12,11 @@ const io = new Server(server, {
   }
 });
 
+app.get('/', (req, res) => {
+  res.send('Backend is alive');
+});
+
+
 const PORT = process.env.PORT || 3000; // Используем порт из переменных окружения или 3000
 const MESSAGES_FILE = 'messages.json';
 
